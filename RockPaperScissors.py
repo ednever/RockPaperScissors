@@ -60,6 +60,10 @@ if game==1:
             quit()
 
 elif game==0:
+    win_l1=[]
+    win1=0
+    win_l2=[]
+    win2=0
     while 1:
         print("Пользователь1 выбери: камень - q/ ножницы - w/ бумага - e ")
         if read_key()=="q":
@@ -81,8 +85,28 @@ elif game==0:
             print("Ничья")
         elif valik==1 and valik2==2 or valik==2 and valik2==3 or valik==3 and valik2==1:
             print("Пользователь1 выиграл")
+            win_l1.append(1)
         elif valik==2 and valik2==1 or valik==3 and valik2==2 or valik==1 and valik2==3:
             print("Пользователь2 выиграл")
+            win_l2.append(1)
+        win1=sum(win_l1)
+        win2=sum(win_l2)
+        print(f"Очки первого пользователя «{win1}»")
+        print(f"Очки второго пользователя «{win2}»")
+        print("Желаете ли вы очистить счет? (1 - Да/0 - Нет)")
+        while 1:
+            try:
+                point=int(input(" => "))
+                if point==1 or point==0:
+                    break
+            except ValueError:
+                print("Непрвильный ввод данных")
+        if point==1:
+            win_l1.clear()
+            win_l2.clear()
+            continue
+        else:
+            continue    
         print("Желаете ещё одну игру? (1 - Да/0 - Нет)")
         while 1:
             try:
