@@ -88,7 +88,7 @@ elif game==0:
     win2=0
     while 1:
         print(f"{name1} выбери: камень - q/ ножницы - w/ бумага - e ")
-        if read_key()=="q":
+        if read_key()=="q": #не всегда выбирается
             valik=1
         elif read_key()=="w":
             valik=2
@@ -119,7 +119,7 @@ elif game==0:
         print("Желаете ли вы очистить счет? (backspace - Да/space - Нет)")
         print("При создании игры первый игрок всегда проигрывал, поэтому у него не очищается счёт при выигрышах")
         if read_key() == "backspace":
-            winl1.clear()
+            winl1.clear() #не всегда работает
             winl2.clear()
         if read_key() == "space":
             print("Так держать!")
